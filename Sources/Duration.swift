@@ -12,31 +12,31 @@ prefix func - (duration: Duration) -> (Duration) {
     return Duration(value: -duration.value, unit: duration.unit)
 }
 
-public class Duration {
+public struct Duration {
     public let value: Int
-    public let unit: NSCalendarUnit
-    private let calendar = NSCalendar.currentCalendar()
+    public let unit: Calendar.Unit
+    private let calendar = Calendar.current()
     
     /**
         Initialize a date before a duration.
     */
-    public var ago: NSDate {
-        return ago(from: NSDate())
+    public var ago: Date {
+        return ago(from: Date())
     }
     
-    public func ago(from date: NSDate) -> NSDate {
-        return calendar.dateByAddingDuration(-self, toDate: date, options: .SearchBackwards)!
+    public func ago(from date: Date) -> Date {
+        return calendar.dateByAddingDuration(-self, toDate: date, options: .searchBackwards)!
     }
     
     /**
         Initialize a date after a duration.
     */
-    public var later: NSDate {
-        return later(from: NSDate())
+    public var later: Date {
+        return later(from: Date())
     }
     
-    public func later(from date: NSDate) -> NSDate {
-        return calendar.dateByAddingDuration(self, toDate: date, options: .SearchBackwards)!
+    public func later(from date: Date) -> Date {
+        return calendar.dateByAddingDuration(self, toDate: date, options: .searchBackwards)!
     }
     
     /**
@@ -44,11 +44,11 @@ public class Duration {
     
         This operation is performed under incorrect assumption that 1 month is always equal to 30 days.
     */
-    public lazy var interval: NSTimeInterval = { [unowned self] in
-        return self.unit.interval * NSTimeInterval(self.value)
-    }()
+    public var interval: TimeInterval {
+        return unit.interval * TimeInterval(value)
+    }
     
-    public init(value: Int, unit: NSCalendarUnit) {
+    public init(value: Int, unit: Calendar.Unit) {
         self.value = value
         self.unit = unit
     }
