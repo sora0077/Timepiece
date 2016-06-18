@@ -29,8 +29,8 @@ let timeLimit = now.endOfHour
 
 //: ### Time zone
 let cst = TimeZone(abbreviation: "CST")!
-let dateInCST = now.beginningOfDay.change(timeZone: cst)
-dateInCST?.timeZone
+let dateInCST = now.beginningOfDay.change(timeZone: cst)!
+dateInCST.timeZone
 
 //: ### Format and parse
 5.minutes.later.stringFromFormat("yyyy-MM-dd HH:mm:SS")
