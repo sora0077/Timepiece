@@ -15,7 +15,7 @@ prefix func - (duration: Duration) -> (Duration) {
 public struct Duration {
     public let value: Int
     public let unit: Calendar.Unit
-    private let calendar = Calendar.current()
+    private let calendar = Calendar.current
     
     /**
         Initialize a date before a duration.

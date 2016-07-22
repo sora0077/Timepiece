@@ -12,7 +12,7 @@ import XCTest
 class NSDateTestCase: XCTestCase {
     let now = Date()
     // TODO: Stub calendar's timezone
-    let calendar = Calendar.current()
+    let calendar = Calendar.current
     var birthday: Date! {
         var components = DateComponents()
         components.year = 1987

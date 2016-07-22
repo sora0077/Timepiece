@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let supportsDateByAddingUnit = Calendar.current().responds(to: #selector(Calendar.date(byAdding:value:to:options:)))
+private let supportsDateByAddingUnit = Calendar.current.responds(to: #selector(Calendar.date(byAdding:value:to:options:)))
 
 extension Calendar {
     func dateByAddingDuration(_ duration: Duration, toDate date: Date, options opts: Calendar.Options) -> Date? {
