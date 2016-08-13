@@ -29,7 +29,8 @@ let timeLimit = now.endOfHour
 
 //: ### Time zone
 let cst = TimeZone(abbreviation: "CST")!
-let dateInCST = now.beginningOfDay.change(timeZone: cst)!
+var beginningOfDay = now.beginningOfDay
+let dateInCST = beginningOfDay.change(timeZone: cst)!
 dateInCST.timeZone
 
 //: ### Format and parse

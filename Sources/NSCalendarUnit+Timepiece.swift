@@ -14,26 +14,26 @@ import Foundation
     The conversion of Duration into NSTimeInterval is performed under incorrect assumption that 1 month is always equal to 30 days.
     Therefore, The comparison between Duration and NSTimeInterval is also incorrect.
 */
-public extension Calendar.Unit {
+public extension Calendar.Component {
     public var interval: TimeInterval {
         switch self {
-        case Calendar.Unit.nanosecond:     return 1e-9                 // 1e-9 second
-        case Calendar.Unit.second:     	return 1                    // 1 second
-        case Calendar.Unit.minute:         return 60                   // 1 minute
-        case Calendar.Unit.hour:           return 3600                 // 1 hour
-        case Calendar.Unit.weekday,
-             Calendar.Unit.weekdayOrdinal,
-             Calendar.Unit.day:            return 86400                // 1 day
-        case Calendar.Unit.weekOfYear,
-             Calendar.Unit.weekOfMonth:    return 604800               // 7 days
-        case Calendar.Unit.month:          return 2592000              // 30 days
-        case Calendar.Unit.yearForWeekOfYear,
-             Calendar.Unit.quarter:        return 146097/400/4*86400   // ~91.31 days
-        case Calendar.Unit.year:       	return 146097/400*86400     // ~365.25 days
+        case .nanosecond:     return 1e-9                 // 1e-9 second
+        case .second:     	return 1                    // 1 second
+        case .minute:         return 60                   // 1 minute
+        case .hour:           return 3600                 // 1 hour
+        case .weekday,
+             .weekdayOrdinal,
+             .day:            return 86400                // 1 day
+        case .weekOfYear,
+             .weekOfMonth:    return 604800               // 7 days
+        case .month:          return 2592000              // 30 days
+        case .yearForWeekOfYear,
+             .quarter:        return 146097/400/4*86400   // ~91.31 days
+        case .year:       	return 146097/400*86400     // ~365.25 days
         // 400 years have 146097 days (taking into account leap year rules)
             
         default:
-            print("warn: .interval for NSCalendarUnit(\(self.rawValue)) can't be determined. Returning 0.")
+            print("warn: .interval for NSCalendarUnit(\(self)) can't be determined. Returning 0.")
             return 0
         }
     }

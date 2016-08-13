@@ -26,18 +26,18 @@ class NSDateTestCase: XCTestCase {
     let cst = TimeZone(abbreviation: "CST")!
     
     func testPlus() {
-        let nextDay = calendar.date(byAdding: .day, value: 1, to: now, options: .searchBackwards)!
+        let nextDay = calendar.date(byAdding: .day, value: 1, to: now)!
         XCTAssertEqual(now + 1.day, nextDay, "")
         
-        let nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: now, options: .searchBackwards)!
+        let nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: now)!
         XCTAssertEqual(now + 1.week, nextWeek, "")
     }
     
     func testMinusWithDuration() {
-        let lastDay = calendar.date(byAdding: .day, value: -1, to: now, options: .searchBackwards)!
+        let lastDay = calendar.date(byAdding: .day, value: -1, to: now)!
         XCTAssertEqual(now - 1.day, lastDay, "")
         
-        let lastWeek = calendar.date(byAdding: .weekOfYear, value: -1, to: now, options: .searchBackwards)!
+        let lastWeek = calendar.date(byAdding: .weekOfYear, value: -1, to: now)!
         XCTAssertEqual(now - 1.week, lastWeek, "")
     }
     
@@ -50,9 +50,9 @@ class NSDateTestCase: XCTestCase {
     
     func testMinusWithDifferentTimeZone() {
         let date1 = Date.date(year: 2015, month: 5, day: 1)
-        let date2 = (date1 + 1.hour).change(timeZone: cst)
-        
-        XCTAssertTrue(date2! - date1 == 1.hour, "")
+        var date2 = (date1 + 1.hour)
+        let date3 = date2.change(timeZone: cst)
+        XCTAssertTrue(date3! - date1 == 1.hour, "")
     }
     
     func testEqual() {
@@ -65,7 +65,7 @@ class NSDateTestCase: XCTestCase {
     }
     
     func testEqualWithDifferentTimeZones() {
-        let date1 = Date.date(year: 2015, month: 5, day: 1)
+        var date1 = Date.date(year: 2015, month: 5, day: 1)
         let date2 = date1.change(timeZone: cst)
         
         XCTAssertTrue(date1 == date2, "")
@@ -84,12 +84,14 @@ class NSDateTestCase: XCTestCase {
     
     func testCompareWithDifferentTimeZones() {
         let date1 = Date.date(year: 2015, month: 5, day: 1)
-        let date2 = (date1 + 1.second).change(timeZone: cst)
-        let date3 = (date1 - 1.second).change(timeZone: cst)
+        var date2 = (date1 + 1.second)
+        var date3 = (date1 - 1.second)
+        let date4 = date2.change(timeZone: cst)
+        let date5 = date3.change(timeZone: cst)
         
-        XCTAssertTrue(date1 < date2, "")
+        XCTAssertTrue(date1 < date4, "")
         XCTAssertTrue(date1 <= date1, "")
-        XCTAssertTrue(date1 > date3, "")
+        XCTAssertTrue(date1 > date5, "")
         XCTAssertTrue(date1 >= date1, "")
     }
 
@@ -122,7 +124,7 @@ class NSDateTestCase: XCTestCase {
     }
     
     func testToday() {
-        var components = calendar.components([.year, .month, .day, .hour, .minute, .second], from: now)
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         components.hour = 0
         components.minute = 0
         components.second = 0
@@ -131,7 +133,7 @@ class NSDateTestCase: XCTestCase {
     }
     
     func testYesterday() {
-        var components = calendar.components([.year, .month, .day, .hour, .minute, .second], from: now)
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         components.day = now.day - 1
         components.hour = 0
         components.minute = 0
@@ -141,7 +143,7 @@ class NSDateTestCase: XCTestCase {
     }
     
     func testTomorrow() {
-        var components = calendar.components([.year, .month, .day, .hour, .minute, .second], from: now)
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
         components.day = now.day + 1
         components.hour = 0
         components.minute = 0
@@ -172,6 +174,7 @@ class NSDateTestCase: XCTestCase {
     }
     
     func testChangeTimeZone() {
+        var now = self.now
         let cstDate = now.change(timeZone: cst)
         XCTAssertEqual(cstDate?.timeZone, cst, "")
         XCTAssertNotNil(cstDate?.timeZone, "")

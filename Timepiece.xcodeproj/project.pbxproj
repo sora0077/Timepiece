@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DE7CFC91B2712F400E0F331 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA183001AEBC2DB00D95B9B /* NSCalendar+Timepiece.swift */; };
 		3DE7CFCA1B2712F400E0F331 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36DD67199FBE6700E752F5 /* Duration.swift */; };
 		3DE7CFCB1B2712F400E0F331 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6182A199E26CD00FB7AAC /* Int+Timepiece.swift */; };
 		3DE7CFCC1B2712F400E0F331 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC61833199F0B2100FB7AAC /* NSDate+Timepiece.swift */; };
@@ -21,7 +20,6 @@
 		3DE7CFD41B27130300E0F331 /* String+TimepieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D44533A1AA2C50B00199949 /* String+TimepieceTests.swift */; };
 		3DE7CFD51B27130300E0F331 /* NSTimeInterval+TimepieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2115F11B00A02800B3AD69 /* NSTimeInterval+TimepieceTests.swift */; };
 		3DE7CFD61B27130300E0F331 /* NSCalendarUnit+TimepieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA29DB31B03D5F700AE149B /* NSCalendarUnit+TimepieceTests.swift */; };
-		3DE7CFD71B27131A00E0F331 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA183001AEBC2DB00D95B9B /* NSCalendar+Timepiece.swift */; };
 		3DE7CFD81B27131A00E0F331 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36DD67199FBE6700E752F5 /* Duration.swift */; };
 		3DE7CFD91B27131A00E0F331 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6182A199E26CD00FB7AAC /* Int+Timepiece.swift */; };
 		3DE7CFDA1B27131A00E0F331 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC61833199F0B2100FB7AAC /* NSDate+Timepiece.swift */; };
@@ -35,7 +33,6 @@
 		3DE7CFE21B27132C00E0F331 /* String+TimepieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D44533A1AA2C50B00199949 /* String+TimepieceTests.swift */; };
 		3DE7CFE31B27132C00E0F331 /* NSTimeInterval+TimepieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2115F11B00A02800B3AD69 /* NSTimeInterval+TimepieceTests.swift */; };
 		3DE7CFE41B27132C00E0F331 /* NSCalendarUnit+TimepieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA29DB31B03D5F700AE149B /* NSCalendarUnit+TimepieceTests.swift */; };
-		8015E21A1BB9B44C00545DF5 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA183001AEBC2DB00D95B9B /* NSCalendar+Timepiece.swift */; };
 		8015E21B1BB9B44C00545DF5 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36DD67199FBE6700E752F5 /* Duration.swift */; };
 		8015E21C1BB9B44C00545DF5 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6182A199E26CD00FB7AAC /* Int+Timepiece.swift */; };
 		8015E21D1BB9B44C00545DF5 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC61833199F0B2100FB7AAC /* NSDate+Timepiece.swift */; };
@@ -44,7 +41,6 @@
 		8015E2201BB9B44C00545DF5 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA183021AEBC81800D95B9B /* NSDateComponents+Timepiece.swift */; };
 		8015E2211BB9B44C00545DF5 /* NSCalendarUnit+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA29DB11B03C68000AE149B /* NSCalendarUnit+Timepiece.swift */; };
 		8061C2A41BB9B62200F0494D /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8061C29A1BB9B62200F0494D /* Timepiece.framework */; };
-		8061C2B11BB9B65B00F0494D /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA183001AEBC2DB00D95B9B /* NSCalendar+Timepiece.swift */; };
 		8061C2B21BB9B65B00F0494D /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36DD67199FBE6700E752F5 /* Duration.swift */; };
 		8061C2B31BB9B65B00F0494D /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC6182A199E26CD00FB7AAC /* Int+Timepiece.swift */; };
 		8061C2B41BB9B65B00F0494D /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC61833199F0B2100FB7AAC /* NSDate+Timepiece.swift */; };
@@ -105,7 +101,6 @@
 		8061C2A31BB9B62200F0494D /* Timepiece tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Timepiece tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2115F11B00A02800B3AD69 /* NSTimeInterval+TimepieceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+TimepieceTests.swift"; sourceTree = "<group>"; };
 		DF717DE91AFFEECC00A70D2B /* NSTimeInterval+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+Timepiece.swift"; sourceTree = "<group>"; };
-		DFA183001AEBC2DB00D95B9B /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
 		DFA183021AEBC81800D95B9B /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
 		DFA29DB11B03C68000AE149B /* NSCalendarUnit+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendarUnit+Timepiece.swift"; sourceTree = "<group>"; };
 		DFA29DB31B03D5F700AE149B /* NSCalendarUnit+TimepieceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendarUnit+TimepieceTests.swift"; sourceTree = "<group>"; };
@@ -194,7 +189,6 @@
 		3DC61828199E204800FB7AAC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				DFA183001AEBC2DB00D95B9B /* NSCalendar+Timepiece.swift */,
 				3D36DD67199FBE6700E752F5 /* Duration.swift */,
 				3DC6182A199E26CD00FB7AAC /* Int+Timepiece.swift */,
 				3DC61833199F0B2100FB7AAC /* NSDate+Timepiece.swift */,
@@ -529,7 +523,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE7CFD71B27131A00E0F331 /* NSCalendar+Timepiece.swift in Sources */,
 				3DE7CFD81B27131A00E0F331 /* Duration.swift in Sources */,
 				3DE7CFD91B27131A00E0F331 /* Int+Timepiece.swift in Sources */,
 				3DE7CFDA1B27131A00E0F331 /* NSDate+Timepiece.swift in Sources */,
@@ -557,7 +550,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE7CFC91B2712F400E0F331 /* NSCalendar+Timepiece.swift in Sources */,
 				3DE7CFCA1B2712F400E0F331 /* Duration.swift in Sources */,
 				3DE7CFCB1B2712F400E0F331 /* Int+Timepiece.swift in Sources */,
 				3DE7CFCC1B2712F400E0F331 /* NSDate+Timepiece.swift in Sources */,
@@ -588,7 +580,6 @@
 				8015E2201BB9B44C00545DF5 /* NSDateComponents+Timepiece.swift in Sources */,
 				8015E21F1BB9B44C00545DF5 /* String+Timepiece.swift in Sources */,
 				8015E21D1BB9B44C00545DF5 /* NSDate+Timepiece.swift in Sources */,
-				8015E21A1BB9B44C00545DF5 /* NSCalendar+Timepiece.swift in Sources */,
 				8015E2211BB9B44C00545DF5 /* NSCalendarUnit+Timepiece.swift in Sources */,
 				8015E21B1BB9B44C00545DF5 /* Duration.swift in Sources */,
 				8015E21E1BB9B44C00545DF5 /* NSTimeInterval+Timepiece.swift in Sources */,
@@ -603,7 +594,6 @@
 				8061C2B71BB9B65B00F0494D /* NSDateComponents+Timepiece.swift in Sources */,
 				8061C2B61BB9B65B00F0494D /* String+Timepiece.swift in Sources */,
 				8061C2B41BB9B65B00F0494D /* NSDate+Timepiece.swift in Sources */,
-				8061C2B11BB9B65B00F0494D /* NSCalendar+Timepiece.swift in Sources */,
 				8061C2B81BB9B65B00F0494D /* NSCalendarUnit+Timepiece.swift in Sources */,
 				8061C2B21BB9B65B00F0494D /* Duration.swift in Sources */,
 				8061C2B51BB9B65B00F0494D /* NSTimeInterval+Timepiece.swift in Sources */,

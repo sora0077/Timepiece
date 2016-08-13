@@ -11,24 +11,24 @@ import Foundation
 public extension DateComponents {
     init(_ duration: Duration) {
         self.init()
-        switch duration.unit{
-        case Calendar.Unit.day:
+        switch duration.unit {
+        case .day:
             day = duration.value
-        case Calendar.Unit.weekday:
+        case .weekday:
             weekday = duration.value
-        case Calendar.Unit.weekOfMonth:
+        case .weekOfMonth:
             weekOfMonth = duration.value
-        case Calendar.Unit.weekOfYear:
+        case .weekOfYear:
             weekOfYear = duration.value
-        case Calendar.Unit.hour:
+        case .hour:
             hour = duration.value
-        case Calendar.Unit.minute:
+        case .minute:
             minute = duration.value
-        case Calendar.Unit.month:
+        case .month:
             month = duration.value
-        case Calendar.Unit.second:
+        case .second:
             second = duration.value
-        case Calendar.Unit.year:
+        case .year:
             year = duration.value
         default:
             () // unsupported / ignore

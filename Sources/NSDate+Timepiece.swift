@@ -12,11 +12,11 @@ import ObjectiveC
 // MARK: - Calculation
 
 public func + (lhs: Date, rhs: Duration) -> Date {
-    return Calendar.current.dateByAddingDuration(rhs, toDate: lhs, options: .searchBackwards)!
+    return Calendar.current.date(byAdding: rhs.unit, value: rhs.value, to: lhs)!
 }
 
 public func - (lhs: Date, rhs: Duration) -> Date {
-    return Calendar.current.dateByAddingDuration(-rhs, toDate: lhs, options: .searchBackwards)!
+    return Calendar.current.date(byAdding: rhs.unit, value: rhs.value, to: lhs)!
 }
 
 public func - (lhs: Date, rhs: Date) -> TimeInterval {
@@ -28,6 +28,8 @@ public func - (lhs: Date, rhs: Date) -> TimeInterval {
 public extension Date {
     private struct AssociatedKeys {
         static var TimeZone = "timepiece_TimeZone"
+        
+        static var Calendar = "timepiece_Calendar"
     }
     
     // MARK: - Get components
@@ -65,11 +67,16 @@ public extension Date {
     }
     
     private var components: DateComponents {
-        return calendar.components([.year, .month, .weekday, .day, .hour, .minute, .second], from: self)
+        return calendar.dateComponents([.year, .month, .weekday, .day, .hour, .minute, .second], from: self)
     }
     
     private var calendar: Calendar {
-        return Calendar.current
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.Calendar, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.Calendar) as? Calendar ?? Calendar.current
+        }
     }
     
     // MARK: - Initialize
@@ -122,12 +129,12 @@ public extension Date {
     /**
         Initialize a date by changing the time zone of receiver.
     */
-    func change(timeZone: TimeZone) -> Date! {
+    mutating func change(timeZone: TimeZone) -> Date! {
         let originalTimeZone = calendar.timeZone
         calendar.timeZone = timeZone
         
-        let newDate = calendar.date(from: components)!
-        newDate.calendar.timeZone = timeZone
+        var newDate = calendar.date(from: components)
+        newDate?.calendar.timeZone = timeZone
         objc_setAssociatedObject(newDate, &AssociatedKeys.TimeZone, timeZone, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         calendar.timeZone = originalTimeZone
@@ -148,7 +155,7 @@ public extension Date {
         return change(day: 1, hour: 0, minute: 0, second: 0)
     }
     var endOfMonth: Date {
-        let lastDay = calendar.range(of: .day, in: .month, for: self).length
+        let lastDay = calendar.range(of: .day, in: .month, for: self)!.count
         return change(day: lastDay, hour: 23, minute: 59, second: 59)
     }
 	

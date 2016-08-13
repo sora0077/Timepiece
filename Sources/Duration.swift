@@ -14,7 +14,7 @@ prefix func - (duration: Duration) -> (Duration) {
 
 public struct Duration {
     public let value: Int
-    public let unit: Calendar.Unit
+    public let unit: Calendar.Component
     private let calendar = Calendar.current
     
     /**
@@ -25,7 +25,7 @@ public struct Duration {
     }
     
     public func ago(from date: Date) -> Date {
-        return calendar.dateByAddingDuration(-self, toDate: date, options: .searchBackwards)!
+        return calendar.date(byAdding: unit, value: -value, to: date)!
     }
     
     /**
@@ -36,7 +36,7 @@ public struct Duration {
     }
     
     public func later(from date: Date) -> Date {
-        return calendar.dateByAddingDuration(self, toDate: date, options: .searchBackwards)!
+        return calendar.date(byAdding: unit, value: value, to: date)!
     }
     
     /**
@@ -48,7 +48,7 @@ public struct Duration {
         return unit.interval * TimeInterval(value)
     }
     
-    public init(value: Int, unit: Calendar.Unit) {
+    public init(value: Int, unit: Calendar.Component) {
         self.value = value
         self.unit = unit
     }
