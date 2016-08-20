@@ -1,5 +1,5 @@
 //
-//  NSDateComponents+Timepiece.swift
+//  DateComponents+Timepiece.swift
 //  Timepiece
 //
 //  Created by Mattijs on 25/04/15.

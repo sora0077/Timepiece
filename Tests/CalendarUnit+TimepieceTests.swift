@@ -1,5 +1,5 @@
 //
-//  NSCalendarUnit+TimepieceTests.swift
+//  CalendarUnit+TimepieceTests.swift
 //  Timepiece
 //
 //  Created by Mattijs on 13/05/15.
@@ -9,7 +9,7 @@
 import Timepiece
 import XCTest
 
-class NSCalendarUnitTestCase: XCTestCase {
+class CalendarUnitTestCase: XCTestCase {
     func testCalendarUnitIntervals() {
         // some sanity checks
         XCTAssertLessThan(Calendar.Component.nanosecond.interval, 1, "")

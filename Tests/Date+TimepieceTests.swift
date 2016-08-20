@@ -1,5 +1,5 @@
 //
-//  NSDate+TimepieceTests.swift
+//  Date+TimepieceTests.swift
 //  Timepiece
 //
 //  Created by Naoto Kaneko on 2014/08/16.
@@ -9,7 +9,7 @@
 import Timepiece
 import XCTest
 
-class NSDateTestCase: XCTestCase {
+class DateTestCase: XCTestCase {
     let now = Date()
     // TODO: Stub calendar's timezone
     let calendar = Calendar.current
@@ -89,9 +89,9 @@ class NSDateTestCase: XCTestCase {
         let date4 = date2.change(timeZone: cst)
         let date5 = date3.change(timeZone: cst)
         
-        XCTAssertTrue(date1 < date4, "")
+        XCTAssertTrue(date1 < date4!, "")
         XCTAssertTrue(date1 <= date1, "")
-        XCTAssertTrue(date1 > date5, "")
+        XCTAssertTrue(date1 > date5!, "")
         XCTAssertTrue(date1 >= date1, "")
     }
 

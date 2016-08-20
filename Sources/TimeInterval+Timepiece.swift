@@ -1,5 +1,5 @@
 //
-//  NSTimeInterval+Timepiece.swift
+//  TimeInterval+Timepiece.swift
 //  Timepiece
 //
 //  Created by Mattijs on 10/05/15.

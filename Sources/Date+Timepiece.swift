@@ -1,5 +1,5 @@
 //
-//  NSDate+Timepiece.swift
+//  Date+Timepiece.swift
 //  Timepiece
 //
 //  Created by Naoto Kaneko on 2014/08/16.

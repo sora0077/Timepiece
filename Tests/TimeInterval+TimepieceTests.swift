@@ -1,5 +1,5 @@
 //
-//  NSTimeIntervalTestCase.swift
+//  TimeIntervalTestCase.swift
 //  Timepiece
 //
 //  Created by Mattijs on 10/05/15.
@@ -9,7 +9,7 @@
 import Timepiece
 import XCTest
 
-class NSTimeIntervalTestCase: XCTestCase {
+class TimeIntervalTestCase: XCTestCase {
     let now = Date()
 
     func testDurationComparison() {

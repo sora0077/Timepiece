@@ -1,5 +1,5 @@
 //
-//  NSCalendarUnit+Timepiece.swift
+//  CalendarUnit+Timepiece.swift
 //  Timepiece
 //
 //  Created by Mattijs on 13/05/15.
