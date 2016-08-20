@@ -16,7 +16,7 @@ public func + (lhs: Date, rhs: Duration) -> Date {
 }
 
 public func - (lhs: Date, rhs: Duration) -> Date {
-    return Calendar.current.date(byAdding: rhs.unit, value: rhs.value, to: lhs)!
+    return Calendar.current.date(byAdding: rhs.unit, value: -rhs.value, to: lhs)!
 }
 
 public func - (lhs: Date, rhs: Date) -> TimeInterval {
